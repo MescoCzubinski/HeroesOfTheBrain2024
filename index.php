@@ -25,12 +25,13 @@ if(!isset($_COOKIE['user'])){
     <h1>Let's Play!</h1>
 
     <!-- Wygląd przy zalogowanym użytkowniku -->
-    <div class="gap-6 flex flex-col items-center justify-center">
+    <div class="container">
 
-      <form action="./queries.php" method="post">
-        <label for="memes" class="text-alert">Add memes to begin!</label>
-        <input type="file" id="memes" name="memes" accept="image/png, image/jpeg" />
+      <form action="game.php" method="POST" id="photoForm">
+          <input type="file" id="photos" accept="image/*" multiple>
+          <button type="submit" id="submit">Upload</button>
       </form>
+      <span id="files-count-alert" class=" hidden">Choose 5 files</span>
 
     </div>
     <!-- Wygląd przy zalogowanym użytkowniku -->
@@ -39,7 +40,7 @@ if(!isset($_COOKIE['user'])){
 
     <!-- Wygląd bez użytkownika -->
 
-    <div class="gap-6 flex flex-col items-center justify-center">
+    <div class="container hidden">
 
       <form action="./queries.php" method="post">
         <label for="memes" class="text-alert">Add memes to begin!</label>
@@ -55,4 +56,5 @@ if(!isset($_COOKIE['user'])){
 
   </div>
 </body>
+<script src="./src/scripts/script.js"></script>
 </html>

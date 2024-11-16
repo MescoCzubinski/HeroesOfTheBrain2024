@@ -13,3 +13,7 @@ html, body{
 h1{
     @apply font-bold text-5xl
 }
+
+.container{
+    @apply gap-6 flex flex-col items-center justify-center
+}
