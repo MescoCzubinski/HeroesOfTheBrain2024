@@ -745,3 +745,15 @@ h1 {
   line-height: 1;
   font-weight: 700;
 }
+
+.player:nth-child(2){
+  border-color: yellow;
+}
+
+.player:nth-child(3){
+  border-color: yellow;
+}
+
+.player:first-child .player-stats{
+  color: yellow;
+}
