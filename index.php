@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+if(!isset($_COOKIE['user'])){
+  $DB = new mysqli("localhost", "root", "", "heroes_of_the_brain");
+  
+
+
+  $DB->close();
+}
+
+?>
+
+
 <!doctype html>
 <html>
 <head>
@@ -9,7 +24,23 @@
   <div class="flex flex-col w-full h-full items-center justify-center gap-6">
     <h1>Let's Play!</h1>
 
-    <div class="gap-6 flex flex-col items-center justify-center">
+    <!-- Wygląd przy zalogowanym użytkowniku -->
+    <div class="container">
+
+      <form action="game.php" method="POST" id="photoForm">
+          <input type="file" id="photos" accept="image/*" multiple>
+          <button type="submit" id="submit">Upload</button>
+      </form>
+      <span id="files-count-alert" class=" hidden">Choose 5 files</span>
+
+    </div>
+    <!-- Wygląd przy zalogowanym użytkowniku -->
+
+
+
+    <!-- Wygląd bez użytkownika -->
+
+    <div class="container hidden">
 
       <form action="./queries.php" method="post">
         <label for="memes" class="text-alert">Add memes to begin!</label>
@@ -18,6 +49,12 @@
 
     </div>
 
+    <!-- Wygląd bez użytkownika -->
+
+
+
+
   </div>
 </body>
+<script src="./src/scripts/script.js"></script>
 </html>

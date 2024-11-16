@@ -13,12 +13,3 @@ html, body{
 h1{
     @apply font-bold text-5xl
 }
-.player:nth-child(2){
-    border-color: yellow;
-}
-.player:nth-child(3){
-    border-color: yellow;
-}
-.player:first-child .player-stats{
-    color: yellow;
-}
