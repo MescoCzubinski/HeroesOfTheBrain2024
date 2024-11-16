@@ -554,20 +554,18 @@ video {
   display: none;
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+.flex {
+  display: flex;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.flex-col {
+  flex-direction: column;
 }
 
-.font-bold {
-  font-weight: 700;
+.items-center {
+  align-items: center;
 }
 
-.underline {
-  text-decoration-line: underline;
+.justify-center {
+  justify-content: center;
 }

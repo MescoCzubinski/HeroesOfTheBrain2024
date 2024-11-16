@@ -6,8 +6,11 @@
   <link href="./src/styles/output.css" rel="stylesheet">
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline bg-red-500">
-    Hello world!
-  </h1>
+  <div class="flex items-center flex-col justify-center">
+    <h1>Let's Play!</h1>
+    <label for="memes">Add memes to begin!:</label>
+    <input type="file" id="memes" name="memes" accept="image/png, image/jpeg" />
+
+  </div>
 </body>
 </html>
