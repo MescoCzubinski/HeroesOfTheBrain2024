@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Lis 16, 2024 at 04:27 PM
--- Wersja serwera: 10.4.32-MariaDB
--- Wersja PHP: 8.1.25
+-- Generation Time: Nov 16, 2024 at 07:02 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,12 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` varchar(7) NOT NULL,
-  `finished` tinyint(1) NOT NULL,
+  `score` int(11) NOT NULL DEFAULT 0,
+  `games` int(11) NOT NULL DEFAULT 0,
+  `finished` tinyint(1) NOT NULL DEFAULT 0,
   `meme1` blob DEFAULT NULL,
   `meme2` blob DEFAULT NULL,
   `meme3` blob DEFAULT NULL,
@@ -41,16 +43,26 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `finished`, `meme1`, `meme2`, `meme3`, `meme4`, `meme5`) VALUES
-('player1', 0, '', '', '', '', ''),
-('player2', 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `score`, `games`, `finished`, `meme1`, `meme2`, `meme3`, `meme4`, `meme5`) VALUES
+('Apple', 17, 26, 0, NULL, NULL, NULL, NULL, NULL),
+('Czelex', 33, 54, 0, NULL, NULL, NULL, NULL, NULL),
+('Dradone', 12, 42, 0, NULL, NULL, NULL, NULL, NULL),
+('ElPrimo', 21, 43, 0, NULL, NULL, NULL, NULL, NULL),
+('Exer', 19, 26, 0, NULL, NULL, NULL, NULL, NULL),
+('FOXjust', 32, 42, 0, NULL, NULL, NULL, NULL, NULL),
+('Kejkej', 2, 25, 0, NULL, NULL, NULL, NULL, NULL),
+('Kejo', 21, 32, 0, NULL, NULL, NULL, NULL, NULL),
+('MDuzy', 42, 44, 0, NULL, NULL, NULL, NULL, NULL),
+('Olek', 39, 47, 0, NULL, NULL, NULL, NULL, NULL),
+('Oner', 21, 32, 0, NULL, NULL, NULL, NULL, NULL),
+('ukasz', 23, 34, 0, NULL, NULL, NULL, NULL, NULL);
 
 --
--- Indeksy dla zrzutów tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksy dla tabeli `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
