@@ -5,9 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 html, body{
-    @apply m-0 p-0 h-full;
+    @apply m-0 p-0 h-screen;
     font-family: "Montserrat", sans-serif;
-    @apply bg-primary-100 text-secondary-200
+    @apply bg-primary-100 text-secondary-200 overflow-hidden
+    
 }
 
 h1{
@@ -21,4 +22,12 @@ h1{
 }
 .player:first-child .player-stats{
     color: yellow;
+}
+
+.box{
+    @apply gap-6 flex items-center justify-center
+}
+
+main header{
+    @apply flex justify-end  w-full
 }

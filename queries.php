@@ -5,8 +5,9 @@ var_dump($_POST);
 session_start();
 $DB = new mysqli("localhost", "root", "", "heroes_of_the_brain");
 
-if (isset($_POST['user'])) {
-    $_COOKIE['user'] = $_POST['user'];
+
+if (isset($_COOKIE['user_id'])) {
+    $user = $_COOKIE['user_id'];
 }
 
 if (isset($_POST['form'])) {
@@ -50,6 +51,16 @@ if ($form == "sign_up"){
 if ($form == "sign_out"){
     unset($_COOKIE['user_id']); 
     setcookie('user_id', '', -1);
+    header("Location: index.php");
+    exit;
+}
+
+// Przetwarzanie WYSZUKIWANIA GRY
+if ($form == "is_active"){
+    $stmt = $DB->prepare("UPDATE users SET is_active=1 WHERE id=$user;"); 
+
+    $stmt->execute();
+
     header("Location: index.php");
     exit;
 }
