@@ -11,20 +11,7 @@
         <input type="file" id="photos" accept="image/*" multiple>
         <button type="submit" id="submit">Upload</button>
     </form>
-    <span id="files-count-alert" class=" hidden">Choose 5 files</span>
-    <script>
-        const elementPhotos = document.querySelector('#photos')
-        const elementFilesCountAlert = document.querySelector('#files-count-alert')
-
-        elementPhotos.addEventListener('change', function() {
-            const fileCount = this.files.length;
-            if(fileCount != 5){
-                elementPhotos.value = ''
-                elementFilesCountAlert.classList.remove('hidden')
-            } else {
-                elementFilesCountAlert.classList.add('hidden')
-            }
-        });
-    </script>
+    <span id="files-count-alert" class="hidden text-alert">Choose 5 files</span>
 </body>
+<script src="./src/styles/script.js"></script>
 </html>
