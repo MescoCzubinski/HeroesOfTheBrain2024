@@ -1,3 +1,14 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "heroes_of_the_brain";
+
+$DB = new mysqli($servername, $username, $password, $dbname);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +18,21 @@
     <link rel="stylesheet" href="./src/styles/output.css">
 </head>
 <body>
-    <form action="game.php" method="POST" id="photoForm">
-        <input type="file" id="photos" accept="image/*" multiple>
-        <button type="submit" id="submit">Upload</button>
-    </form>
-    <span id="files-count-alert" class="hidden text-alert">Choose 5 files</span>
+<?php
+$user = "player1";
+$sql = "SELECT id, score, games FROM users ORDER BY score DESC";
+$result = $DB->query(query: $sql);
+
+while($row = $result->fetch_assoc()):?>
+    <div class="">
+        <div class=""><?php echo $row['id'] ?></div>
+        <div class="">points: <?php echo $row['score'] ?></div>
+        <div class="">played: <?php echo $row['games'] ?> game</div>
+    </div>
+<?php
+endwhile;
+$DB->close();
+?> 
 </body>
-<script src="./src/styles/script.js"></script>
+<script src="./src/scripts/script.js"></script>
 </html>
