@@ -10,8 +10,12 @@
     <h1>Let's Play!</h1>
 
     <div class="gap-6 flex flex-col items-center justify-center">
-      <label for="memes">Add memes to begin!</label>
-      <input type="file" id="memes" name="memes" accept="image/png, image/jpeg" />
+
+      <form action="./queries.php" method="post">
+        <label for="memes" class="text-alert">Add memes to begin!</label>
+        <input type="file" id="memes" name="memes" accept="image/png, image/jpeg" />
+      </form>
+
     </div>
 
   </div>

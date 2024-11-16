@@ -586,6 +586,11 @@ video {
   gap: 1.5rem;
 }
 
+.text-alert {
+  --tw-text-opacity: 1;
+  color: rgb(233 66 32 / var(--tw-text-opacity, 1));
+}
+
 html, body {
   margin: 0px;
   height: 100%;
