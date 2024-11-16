@@ -13,7 +13,12 @@ html, body{
 h1{
     @apply font-bold text-5xl
 }
-
-.container{
-    @apply gap-6 flex flex-col items-center justify-center
+.player:nth-child(2){
+    border-color: yellow;
+}
+.player:nth-child(3){
+    border-color: yellow;
+}
+.player:first-child .player-stats{
+    color: yellow;
 }
