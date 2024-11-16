@@ -57,11 +57,10 @@ if ($form == "sign_out"){
 
 // Przetwarzanie WYSZUKIWANIA GRY
 if ($form == "is_active"){
-    $stmt = $DB->prepare("UPDATE users SET is_active=1 WHERE id=$user;"); 
+    $stmt = $DB->prepare("UPDATE users SET is_active=1 WHERE id='$user'"); 
 
     $stmt->execute();
-
-    header("Location: index.php");
+    header("Location: game.php");
     exit;
 }
 
