@@ -7,8 +7,6 @@ if (!isset($_COOKIE['user'])) {
 
 
 }
-
-var_dump($_COOKIE);
 ?>
 
 
@@ -29,12 +27,13 @@ var_dump($_COOKIE);
   <main class="h-full w-full">
     <!-- Wygląd przy zalogowanym użytkowniku -->
     <?php if (isset($_COOKIE['user_id'])): ?>
-      <header>
-        <form action="queries.php" method="post">
-          <input type="hidden" name="form" value="sign_out">
-          <button type="submit">Sign Out</button>
+      <header class=" flex border-b-2 border-t-secondary-200 pb-6 justify-between">
+        <div class=" text-4xl pt-6 pl-4 flex"><p class=" text-secondary-100 pr-2">MEME BATTLE</p><p class=" text-xl pt-2.5">by Azciweisakul</p></div>
+        <form action="queries.php" method="post" class=""> 
+          <input type="hidden" name="form" value="sign_out" class=" text-4xl pt-6 pr-4">
+          <button type="submit" class=" text-4xl pt-6 pr-4">Sign Out</button><i class=" text-4xl demo-icon icon-menu"></i>
         </form>
-      </header>
+      </header> 
       <!-- Wygląd przy zalogowanym użytkowniku -->
 
 
@@ -52,17 +51,15 @@ var_dump($_COOKIE);
 
       <!-- Wygląd bez użytkownika -->
 
-    <?php endif ?>
+    <?php endif ?>  
 
     <div class="w-full h-full flex justify-center items-center ">
 
       <?php if (!empty($_COOKIE['user_id'])): ?>
         <!-- Wygląd przy zalogowanym użytkowniku -->
-        <div class="box flex-col w-full">
-          <h1>Let's Play!</h1>
-
-          <form action="queries.php" method="post">
-            <input type="submit" value="Graj!" class="cursor-pointer">
+        <div class="box flex-col w-full m-10 h-full" >  
+          <form action="queries.php" method="post" class="h-full">
+            <input type="submit" value="Let's Play!" class=" text-9xl font-weight-700 h-full text-secondary-200 hover:text-secondary-100" cursor-pointer">
             <input type="hidden" name="form" value="is_active">
           </form>
 
