@@ -132,7 +132,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['fetchImages'])) {
                     // Start showing images every 5 seconds
                     showNextImage();
                     setInterval(showNextImage, 5000);
-
+                    infoAPI = curl_getinfo('http://localhost:5000/api/predict')
+                    console.log(infoAPI);
+                    
                 } else {
                     document.getElementById('error-message').textContent = data.message || "No images found";
                 }
