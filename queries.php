@@ -131,9 +131,10 @@ if ($form=="send_meme") {
             $indeks = $i+1;
 
             $final_meme_id = get_user_id($user).'_meme_'.$indeks;
+            $ready_number = get_user_id($user).'_ready';
             print_r($final_meme_id);
-            $stmt = $DB->prepare("UPDATE matches SET $final_meme_id=(?) WHERE match_id=$match ");
-            $stmt->bind_param("s", $imageData);
+            $stmt = $DB->prepare("UPDATE matches SET $final_meme_id=(?), $ready_number=(?) WHERE match_id=$match ");
+            $stmt->bind_param("si", $imageData, 1);
             $stmt->execute();
         }
         // echo '<br>';

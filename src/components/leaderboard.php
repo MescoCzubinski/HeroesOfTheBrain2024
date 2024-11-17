@@ -1,7 +1,7 @@
 <div class="w-32 text-left m-2">
         <div class=" text-secondary-100 text-center text-xl pb-2">Top players</div>
         <?php
-            $sql = "SELECT id, score, games FROM users ORDER BY score/games DESC LIMIT 5";
+            $sql = "SELECT id, score, games FROM users ORDER BY score/games DESC LIMIT 9";
             $result = $DB->query(query: $sql);
 
             $pleace = 0;

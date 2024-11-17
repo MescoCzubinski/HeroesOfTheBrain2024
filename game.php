@@ -12,7 +12,7 @@ if (isset($_POST['SEARCHED'])) : ?>
     }
 
     // Ur session:
-    $match = mysqli_fetch_assoc($DB->query("SELECT * FROM matches WHERE (user1='$user' OR user2='$user') AND (user1 != '' AND user2 != '') LIMIT 1"));
+    $match = mysqli_fetch_assoc($DB->query("SELECT match_id,user1,user2,1_ready,2_ready FROM matches WHERE (user1='$user' OR user2='$user') AND (user1 != '' AND user2 != '') LIMIT 1"));
     // var_dump($match);
 
     ?>
