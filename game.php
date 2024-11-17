@@ -45,6 +45,7 @@ if (isset($_POST['form'])) {
 
     $DB->close();
 }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
