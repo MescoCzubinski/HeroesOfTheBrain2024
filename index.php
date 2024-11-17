@@ -61,12 +61,6 @@ var_dump($_COOKIE);
         <div class="box flex-col w-full">
           <h1>Let's Play!</h1>
 
-          <!-- <form action="game.php" method="POST" id="photoForm">
-            <input type="file" id="photos" accept="image/*" multiple> 
-            <input type="submit" id="submit">Upload</button>
-          </form>
-          <span id="files-count-alert" class=" hidden">Choose 5 files</span> -->
-
           <form action="queries.php" method="post">
             <input type="submit" value="Graj!" class="cursor-pointer">
             <input type="hidden" name="form" value="is_active">
@@ -80,7 +74,7 @@ var_dump($_COOKIE);
 
         <!-- Wygląd bez użytkownika -->
 
-        <div class="box">
+        <div class="box flex-col w-full">
           <h1><i>Log in</i> to start playing</h1>
           <form action="./queries.php" method="post" class="flex flex-row items-center gap-3">
             <label for="username"><strong>Your Username:</strong></label>
@@ -96,6 +90,10 @@ var_dump($_COOKIE);
           <menu class="">
               <?php @include './src/components/leaderboard.php' ?>
           </menu>
+
+      <?php if (isset($_SESSION['is_active'])): ?>
+        
+      <?php endif ?>
 
     </div>
     
