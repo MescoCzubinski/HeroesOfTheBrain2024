@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_POST);
+var_dump($_FILES);
 
 session_start();
 $DB = new mysqli("localhost", "root", "", "heroes_of_the_brain");

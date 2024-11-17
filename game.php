@@ -21,13 +21,13 @@ $DB = new mysqli($servername, $username, $password, $dbname);
     <link rel="stylesheet" href="./css/fontello-codes.css">
 </head>
 <body>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" action="queries.php">
         <div>
           <label for="image_uploads" id="label-choose-meme">Choose 5 memes</label>
           <input
             type="file"
             id="image_uploads"
-            name="image_uploads"
+            name="image_uploads[]"
             accept=".jpg, .jpeg, .png"
             class="hidden"
             multiple
