@@ -1,7 +1,5 @@
 <?php
-<<<<<<< HEAD
 $DB = new mysqli('localhost', 'root', '', 'heroes_of_the_brain');
-=======
 
 var_dump($_POST);
 
@@ -25,7 +23,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "heroes_of_the_brain";
->>>>>>> 4ef193045f32423c48ddab016a790d424874b2ca
 
 var_dump($_FILES);
 if (isset($_POST['form'])) {
@@ -35,7 +32,6 @@ if (isset($_POST['form'])) {
     // var_dump($imageData);
 
 
-<<<<<<< HEAD
     $stmt = $DB->prepare("UPDATE users SET meme1=(?) WHERE id='ukasz' ");
     $stmt->bind_param("s", $imageData);
 
@@ -49,7 +45,6 @@ if (isset($_POST['form'])) {
 
     $DB->close();
 }
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,5 +150,4 @@ endif;
 
 
 $DB->close();
->>>>>>> 4ef193045f32423c48ddab016a790d424874b2ca
 ?>
