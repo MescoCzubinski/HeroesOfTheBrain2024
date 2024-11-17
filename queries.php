@@ -56,15 +56,44 @@ if ($form == "sign_out"){
 }
 
 // Przetwarzanie WYSZUKIWANIA GRY
-if ($form == "is_active"){
-    $stmt = $DB->prepare("UPDATE users SET is_active=1 WHERE id=$user;"); 
+if ($form == "is_active"):
 
+    // UPDATE USERS STATUS
+    $stmt = $DB->prepare("UPDATE users SET is_active=1 WHERE id='$user'"); 
     $stmt->execute();
+    
+    $existing_match = mysqli_fetch_assoc($DB->query("SELECT match_id FROM matches WHERE NOT user1='$user' LIMIT 1"));
+    // CREATE A MATCH SESSION
+    if(empty($existing_match)){
+        $stmt = $DB->prepare("INSERT INTO matches(user1) VALUES (?)");
+        $stmt->bind_param("s", $user);
+        $stmt->execute();
+    }
+    
+    if(!empty($existing_match)){
+        $match = $existing_match['match_id'];
+        $stmt = $DB->prepare("UPDATE matches SET user2='$user' WHERE match_id=$match"); 
+        $stmt->execute();
+    };
+    ?>
 
-    header("Location: index.php");
-    exit;
-}
+
+    
+    <!-- SPRAWDZAMY TUTAJ CZY UŻYTKOWNIK WYSZUKAŁ GRE -->
+    <!-- <form action="game.php" method="post" id="SEARCHED">
+        <input type="hidden" name="SEARCHED" value="1">
+    </form>
+
+    <script type="text/javascript">
+        document.getElementById('SEARCHED').submit(); // SUBMIT FORM
+    </script> -->
+
+    <?php
+    // exit;
+
+endif;
 
 $DB->close();
 
 ?>
+
